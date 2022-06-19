@@ -23,7 +23,6 @@ def signup(request):
 				username=data['username'],
 				password=data['password'])
 			user.save()
-			
 			token=Token.objects.create(user=user)
 
 			return JsonResponse({'token':str(token)}, status=201)
